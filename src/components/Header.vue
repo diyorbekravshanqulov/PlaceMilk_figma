@@ -10,7 +10,7 @@ const removeReadonly = () => {
     inputRef.value.focus();
     // Move the cursor to the end of the input
     const value = inputRef.value.value;
-    inputRef.value.value = '';
+    inputRef.value.value = "";
     inputRef.value.value = value;
   }
 };
@@ -55,14 +55,17 @@ const removeReadonly = () => {
 
 <template>
   <div class="bg-white container flex flex-wrap">
-    <div class="flex items-center justify-end gap-[30%] w-full mt-[15px] px-[2%]">
+    <div
+      class="flex items-center justify-end gap-[30%] w-full mt-[15px] px-[2%]"
+    >
       <div class="flex items-center gap-9">
         <a
           class="font-light text-[13px] font-[Roboto]"
           v-for="(item, index) in menu"
           :key="index"
           href="#"
-        >{{ item }}</a>
+          >{{ item }}</a
+        >
       </div>
       <div class="flex divide-x divide-[#000]">
         <img
@@ -74,18 +77,20 @@ const removeReadonly = () => {
         <p class="px-5 font-light text-[13px] font-[Roboto]">₽</p>
       </div>
     </div>
-    <div class="flex justify-between items-center w-full mt-[1%]">
-      <img src="../../public/site_bar.svg" alt="Site bar" />
-      <img class="mt-[1%]" src="../../public/logo.svg" alt="Logo" />
+    <div class="grid grid-cols-4 gap-12 items-center w-full mt-[1%]">
+      <div class="grid grid-cols-2 items-center">
+        <img src="../../public/site_bar.svg" alt="Site bar" />
+        <img class="mt-[10%]" src="../../public/logo.svg" alt="Logo" />
+      </div>
       <div
-        class="border-[2px] border-purple-300 h-[40%] w-[724px] mt-[1%] flex relative"
+        class="border-[2px] border-purple-300 h-[40%] col-span-2 mt-[1%] flex relative"
       >
         <span
           class="absolute top-1/2 -translate-y-1/2 left-0 px-[25px] py-[11px]"
           >Везде</span
         >
         <input
-          class="w-full h-full px-[85px]"
+          class="w-full h-full pl-[15%] pr-[12%]"
           type="text"
           id="search-input"
           ref="inputRef"
@@ -98,13 +103,12 @@ const removeReadonly = () => {
           alt="Search"
         />
       </div>
-      <div class="flex gap-[50px] mr-[3%]">
+      <div class="grid grid-cols-3 gap-[50px] place-items-center mr-[10%]">
         <div v-for="(item, index) in 3" :key="index">
-          <img src="../../public/user.svg" alt="">
-          <p class="font-[Roboto] mt-[5px]">Войти</p>
+          <img class="mx-auto" src="../../public/user.svg" alt="" />
+          <p class="font-[Roboto] mx-auto mt-[5px]">Войти</p>
         </div>
       </div>
     </div>
   </div>
 </template>
-
